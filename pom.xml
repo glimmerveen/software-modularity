@@ -17,7 +17,7 @@
         <module>basic-operations</module>
         <module>apis</module>
         <module>calculator</module>
-        <!--        <module>basic-integration-test</module>-->
+        <module>endpoint</module>
     </modules>
 
     <dependencyManagement>
@@ -42,6 +42,11 @@
             <dependency>
                 <groupId>org.example</groupId>
                 <artifactId>basic-operations</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.example</groupId>
+                <artifactId>endpoint</artifactId>
                 <version>${project.version}</version>
             </dependency>
 
@@ -81,11 +86,44 @@
                 <artifactId>slf4j-api</artifactId>
                 <version>1.7.36</version>
             </dependency>
+            <dependency>
+                <groupId>org.apache.aries.spec</groupId>
+                <artifactId>org.apache.aries.javax.jax.rs-api</artifactId>
+                <version>1.0.4</version>
+                <exclusions>
+                    <exclusion>
+                        <groupId>org.osgi</groupId>
+                        <artifactId>org.osgi.compendium</artifactId>
+                    </exclusion>
+                </exclusions>
+            </dependency>
+            <dependency>
+                <groupId>org.osgi</groupId>
+                <artifactId>org.osgi.service.http.whiteboard</artifactId>
+                <version>1.1.1</version>
+                <scope>provided</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.osgi</groupId>
+                <artifactId>org.osgi.service.jaxrs</artifactId>
+                <version>1.0.1</version>
+            </dependency>
 
             <!-- -->
             <dependency>
                 <groupId>org.osgi</groupId>
                 <artifactId>org.osgi.service.log</artifactId>
+                <version>1.4.0</version>
+            </dependency>
+            <dependency>
+                <groupId>javax.servlet</groupId>
+                <artifactId>javax.servlet-api</artifactId>
+                <version>4.0.1</version>
+                <scope>provided</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.osgi</groupId>
+                <artifactId>org.osgi.service.metatype</artifactId>
                 <version>1.4.0</version>
             </dependency>
 
@@ -101,6 +139,25 @@
                 <groupId>org.apache.felix</groupId>
                 <artifactId>org.apache.felix.scr</artifactId>
                 <version>2.2.4</version>
+                <scope>runtime</scope>
+            </dependency>
+
+            <dependency>
+                <groupId>org.osgi</groupId>
+                <artifactId>org.osgi.util.promise</artifactId>
+                <version>1.2.0</version>
+                <scope>runtime</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.osgi</groupId>
+                <artifactId>org.osgi.util.function</artifactId>
+                <version>1.2.0</version>
+                <scope>runtime</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.felix</groupId>
+                <artifactId>org.apache.felix.http.jetty</artifactId>
+                <version>4.2.2</version>
                 <scope>runtime</scope>
             </dependency>
 
@@ -124,17 +181,28 @@
                 <version>1.0.6</version>
                 <scope>runtime</scope>
             </dependency>
-
-            <!-- Test dependencies -->
             <dependency>
-                <groupId>biz.aQute.bnd</groupId>
-                <artifactId>biz.aQute.junit</artifactId>
-                <version>6.3.1</version>
+                <groupId>org.apache.aries.jax.rs</groupId>
+                <artifactId>org.apache.aries.jax.rs.whiteboard</artifactId>
+                <version>2.0.1</version>
+                <scope>runtime</scope>
             </dependency>
             <dependency>
                 <groupId>junit</groupId>
                 <artifactId>junit</artifactId>
                 <version>4.13.2</version>
+                <scope>test</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.felix</groupId>
+                <artifactId>org.apache.felix.http.servlet-api</artifactId>
+                <version>2.0.0</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.felix</groupId>
+                <artifactId>org.apache.felix.configadmin</artifactId>
+                <version>1.9.24</version>
+                <scope>runtime</scope>
             </dependency>
         </dependencies>
     </dependencyManagement>
@@ -234,7 +302,7 @@ Bundle-SymbolicName: $[project.groupId].$[project.artifactId]
                             </requireJavaVersion>
 
                             <requireMavenVersion>
-                                <version>[3.6.2,)</version>
+                                <version>[3.8.6,)</version>
                             </requireMavenVersion>
 
                             <bannedDependencies>

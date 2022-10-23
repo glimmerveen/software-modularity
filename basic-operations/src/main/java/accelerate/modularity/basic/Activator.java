@@ -20,7 +20,7 @@ public class Activator implements BundleActivator {
         calculatorServiceRegistration = bundleContext.registerService(
                 Operations.class,
                 new BasicOperations(),
-                asDictionary(of("calculator", "basic"))
+                asDictionary(of("operations", "basic"))
         );
     }
 

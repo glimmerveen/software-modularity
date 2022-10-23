@@ -32,23 +32,8 @@ public class CalculatorComponent implements Calculator {
     }
 
     @Override
-    public double calculate(String input) {
-        List<Object> items = new ArrayList<>();
-        StreamTokenizer tokenizer = new StreamTokenizer(new StringReader(input));
-        tokenizer.ordinaryChar('-');
-        tokenizer.ordinaryChar('/');
-
-        try {
-            while (tokenizer.nextToken() != StreamTokenizer.TT_EOF) {
-                if (tokenizer.ttype == StreamTokenizer.TT_NUMBER) {
-                    items.add(tokenizer.nval);
-                } else {
-                    items.add(Operator.parse((char) tokenizer.ttype));
-                }
-            }
-        } catch (IOException e) {
-            LOGGER.error("Whoops", e);
-        }
+    public double calculate(String term) {
+        List<Object> items = parseTerm(term);
 
         double value = Double.NaN;
         Iterator<Object> iterator = items.iterator();
@@ -65,6 +50,26 @@ public class CalculatorComponent implements Calculator {
         }
 
         return value;
+    }
+
+    private List<Object> parseTerm(String input) {
+        List<Object> items = new ArrayList<>();
+        StreamTokenizer tokenizer = new StreamTokenizer(new StringReader(input));
+        tokenizer.ordinaryChar('-');
+        tokenizer.ordinaryChar('/');
+
+        try {
+            while (tokenizer.nextToken() != StreamTokenizer.TT_EOF) {
+                if (tokenizer.ttype == StreamTokenizer.TT_NUMBER) {
+                    items.add(tokenizer.nval);
+                } else {
+                    items.add(Operator.parse((char) tokenizer.ttype));
+                }
+            }
+        } catch (IOException e) {
+            LOGGER.error("Whoops", e);
+        }
+        return items;
     }
 
     @Deactivate

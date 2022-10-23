@@ -1,28 +1,47 @@
-#
-# Which framework to use
-#
+###########################################
+# General configuration items
+###########################################
 -runfw: org.apache.felix.framework
+-executable: location='${@bsn}-${@version}.jar'
 
+###########################################
+# Standard bundles required
+###########################################
 -runrequires: \
     bnd.identity; id=org.example.calculator, \
     bnd.identity; id=org.example.cli, \
     bnd.identity; id=org.example.basic-operations
 
-#
+###########################################
 # Gogo shell (commandline prompt)
-#
--runrequires.gogo: \
-    bnd.identity; id=org.apache.felix.gogo.command,\
-    bnd.identity; id=org.apache.felix.gogo.runtime,\
-    bnd.identity; id=org.apache.felix.gogo.jline
+###########################################
+#-runrequires.gogo: \
+#    bnd.identity; id=org.apache.felix.gogo.command,\
+#    bnd.identity; id=org.apache.felix.gogo.runtime,\
+#    bnd.identity; id=org.apache.felix.gogo.jline
 
-#
+###########################################
+# JAXRS endpoint on the calculator
+###########################################
+#-runrequires.jaxrs: \
+#    bnd.identity; id=org.example.endpoint,\
+#    bnd.identity; id=org.apache.felix.http.jetty,\
+#    bnd.identity; id=org.apache.aries.jax.rs.whiteboard,\
+#    bnd.identity; id=com.sun.xml.bind.jaxb-osgi
+
+###########################################
+# Rounding operations
+###########################################
+#-runrequires.rounding: \
+#    bnd.identity;id=org.example.rounding.operations
+
+###########################################
 # Logging libraries
-#
+###########################################
 -runproperties.logging: \
     logback.configurationFile=file:${.}/logback.xml
 -runrequires.logging: \
     bnd.identity; id=org.apache.felix.log,\
     bnd.identity; id=org.apache.felix.logback
 
--executable: location='${@bsn}-${@version}.jar'
+
