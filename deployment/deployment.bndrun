@@ -1,0 +1,28 @@
+#
+# Which framework to use
+#
+-runfw: org.apache.felix.framework
+
+-runrequires: \
+    bnd.identity; id=org.example.calculator, \
+    bnd.identity; id=org.example.cli, \
+    bnd.identity; id=org.example.basic-operations
+
+#
+# Gogo shell (commandline prompt)
+#
+-runrequires.gogo: \
+    bnd.identity; id=org.apache.felix.gogo.command,\
+    bnd.identity; id=org.apache.felix.gogo.runtime,\
+    bnd.identity; id=org.apache.felix.gogo.jline
+
+#
+# Logging libraries
+#
+-runproperties.logging: \
+    logback.configurationFile=file:${.}/logback.xml
+-runrequires.logging: \
+    bnd.identity; id=org.apache.felix.log,\
+    bnd.identity; id=org.apache.felix.logback
+
+-executable: location='${@bsn}-${@version}.jar'
