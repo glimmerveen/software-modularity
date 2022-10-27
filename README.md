@@ -63,9 +63,9 @@ The Gogo shell provides various commands to inspect what is active in the deploy
 | `lb <pattern>`        | Listing of the installed bundles, matching the provided pattern (ie name)           |
 | `stop <bundle id>`    | Stops the associated bundle, which invalidates all services realized by that bundle |
 | `start <bundle id>`   | Starts the associated bundle, which starts the bundle's activator                   |                                                                               
- | `list`                | List all Declarative Services components                                            |
-| `list <bundle id>`    | List all Declarative Services components from a specific bundle                     |
- | `info <component id>` | List the details of a specific component                                            |
+ | `list`                | List all _Declarative Services_ components                                          |
+| `list <bundle id>`    | List all _Declarative Services_ components from a specific bundle                   |
+ | `info <component id>` | List the details of a specific _Declarative Services_ component                     |
 
 See the enRoute's FAQ page on the Gogo shell for more options.
 
