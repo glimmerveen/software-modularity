@@ -10,7 +10,7 @@ This is a _dummy project_ used to experiment with defining, building and running
 
 By running `mvn validate` you can check if the pre-conditions are met.
 
-**_NOTE:_** For any `mvn` command listed here, you could also use `mvnd`.
+**_NOTE:_** For any `mvn` command listed here, you could also use `mvnd` if you used mvnd :).
 
 ## Building it
 
