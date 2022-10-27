@@ -12,10 +12,10 @@
     <name>Modularity</name>
 
     <modules>
+        <module>api</module>
         <module>cli</module>
         <module>deployment</module>
         <module>basic-operations</module>
-        <module>apis</module>
         <module>calculator-component</module>
         <module>jaxrs-endpoint</module>
         <module>calculations-logger</module>
