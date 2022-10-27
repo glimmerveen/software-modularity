@@ -9,8 +9,8 @@
         <version>1.0-SNAPSHOT</version>
     </parent>
 
-    <artifactId>calculator</artifactId>
-    <name>Modularity :: Calculator</name>
+    <artifactId>calculations-history</artifactId>
+    <name>Modularity :: Calculations History</name>
 
     <dependencies>
         <dependency>
@@ -34,14 +34,5 @@
             <artifactId>slf4j-api</artifactId>
         </dependency>
     </dependencies>
-
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>biz.aQute.bnd</groupId>
-                <artifactId>bnd-indexer-maven-plugin</artifactId>
-            </plugin>
-        </plugins>
-    </build>
 
 </project>

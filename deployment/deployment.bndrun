@@ -8,7 +8,7 @@
 # Standard bundles required
 ###########################################
 -runrequires: \
-    bnd.identity; id=org.example.calculator, \
+    bnd.identity; id=org.example.calculator-component, \
     bnd.identity; id=org.example.cli, \
     bnd.identity; id=org.example.basic-operations
 
@@ -19,6 +19,13 @@
 #    bnd.identity; id=org.apache.felix.gogo.command,\
 #    bnd.identity; id=org.apache.felix.gogo.runtime,\
 #    bnd.identity; id=org.apache.felix.gogo.jline
+
+###########################################
+# Whiteboard pattern
+###########################################
+#-runrequires.whiteboard: \
+#    bnd.identity; id=org.example.calculations-logger, \
+#    bnd.identity; id=org.example.calculations-history
 
 ###########################################
 # JAXRS endpoint on the calculator
@@ -33,7 +40,7 @@
 # Rounding operations
 ###########################################
 #-runrequires.rounding: \
-#    bnd.identity;id=org.example.rounding.operations
+#    bnd.identity;id=org.example.rounding-operations
 
 ###########################################
 # Logging libraries

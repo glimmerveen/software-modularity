@@ -16,8 +16,10 @@
         <module>deployment</module>
         <module>basic-operations</module>
         <module>apis</module>
-        <module>calculator</module>
+        <module>calculator-component</module>
         <module>endpoint</module>
+        <module>calculations-logger</module>
+        <module>calculations-history</module>
     </modules>
 
     <dependencyManagement>
@@ -27,13 +29,11 @@
                 <artifactId>cli</artifactId>
                 <version>${project.version}</version>
             </dependency>
-
             <dependency>
                 <groupId>org.example</groupId>
-                <artifactId>calculator</artifactId>
+                <artifactId>calculator-component</artifactId>
                 <version>${project.version}</version>
             </dependency>
-
             <dependency>
                 <groupId>org.example</groupId>
                 <artifactId>api</artifactId>
@@ -49,7 +49,16 @@
                 <artifactId>endpoint</artifactId>
                 <version>${project.version}</version>
             </dependency>
-
+            <dependency>
+                <groupId>org.example</groupId>
+                <artifactId>calculations-logger</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.example</groupId>
+                <artifactId>calculations-history</artifactId>
+                <version>${project.version}</version>
+            </dependency>
 
             <!-- Compile dependencies -->
             <dependency>

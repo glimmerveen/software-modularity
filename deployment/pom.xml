@@ -19,7 +19,7 @@
         </dependency>
         <dependency>
             <groupId>org.example</groupId>
-            <artifactId>calculator</artifactId>
+            <artifactId>calculator-component</artifactId>
         </dependency>
         <dependency>
             <groupId>org.example</groupId>
@@ -28,6 +28,14 @@
         <dependency>
             <groupId>org.example</groupId>
             <artifactId>endpoint</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.example</groupId>
+            <artifactId>calculations-logger</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.example</groupId>
+            <artifactId>calculations-history</artifactId>
         </dependency>
         <dependency>
             <groupId>org.apache.felix</groupId>
