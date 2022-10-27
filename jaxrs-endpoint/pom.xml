@@ -9,7 +9,7 @@
         <version>1.0-SNAPSHOT</version>
     </parent>
 
-    <artifactId>endpoint</artifactId>
+    <artifactId>jaxrs-endpoint</artifactId>
     <name>Modularity :: Endpoint</name>
 
     <dependencies>

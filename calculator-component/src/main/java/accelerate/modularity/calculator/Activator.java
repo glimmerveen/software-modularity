@@ -11,7 +11,7 @@ import org.osgi.framework.ServiceRegistration;
 import org.osgi.util.tracker.ServiceTracker;
 import org.osgi.util.tracker.ServiceTrackerCustomizer;
 
-//@Header(name = Constants.BUNDLE_ACTIVATOR, value = "${@class}")
+@Header(name = Constants.BUNDLE_ACTIVATOR, value = "${@class}")
 public class Activator implements BundleActivator {
 
     private final Object mutex = new Object();
@@ -73,7 +73,7 @@ public class Activator implements BundleActivator {
                 // Unregister the service, ensuring no-one is using it anymore
                 calculatorRegistration.unregister();
                 calculatorRegistration = null;
-                // Deactivate callback into component, such that it cleanup its resources.
+                // Deactivate callback into component, such that it cleans-up its resources.
                 calculatorComponent.stop();
                 calculatorComponent = null;
                 usedOperations = null;

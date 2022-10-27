@@ -27,7 +27,7 @@
         </dependency>
         <dependency>
             <groupId>accelerate.modularity</groupId>
-            <artifactId>endpoint</artifactId>
+            <artifactId>jaxrs-endpoint</artifactId>
         </dependency>
         <dependency>
             <groupId>accelerate.modularity</groupId>

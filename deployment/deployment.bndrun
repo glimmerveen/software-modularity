@@ -31,7 +31,7 @@
 # JAXRS endpoint on the calculator
 ###########################################
 #-runrequires.jaxrs: \
-#    bnd.identity; id=accelerate.modularity.endpoint,\
+#    bnd.identity; id=accelerate.modularity.jaxrs-endpoint,\
 #    bnd.identity; id=org.apache.felix.http.jetty,\
 #    bnd.identity; id=org.apache.aries.jax.rs.whiteboard,\
 #    bnd.identity; id=com.sun.xml.bind.jaxb-osgi

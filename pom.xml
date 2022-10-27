@@ -17,7 +17,7 @@
         <module>basic-operations</module>
         <module>apis</module>
         <module>calculator-component</module>
-        <module>endpoint</module>
+        <module>jaxrs-endpoint</module>
         <module>calculations-logger</module>
         <module>calculations-history</module>
     </modules>
@@ -46,7 +46,7 @@
             </dependency>
             <dependency>
                 <groupId>accelerate.modularity</groupId>
-                <artifactId>endpoint</artifactId>
+                <artifactId>jaxrs-endpoint</artifactId>
                 <version>${project.version}</version>
             </dependency>
             <dependency>
