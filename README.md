@@ -21,7 +21,7 @@ Run `mvn package` to build (parts of) the project.
 The module `deployment` builds an executable JAR that combines the modules from this project with additional elements 
 (OSGi framework, common services).
 
-```
+```shell
 $ cd deployment
 $ java -jar target/deployment.jar
 ```
